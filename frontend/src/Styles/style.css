@@ -1,0 +1,306 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+article{
+    background-color: #ffffff;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Coloca los elementos uno debajo del otro */
+    justify-content: start; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+article h3{
+    margin: 3vh 0; /* Elimina márgenes adicionales */
+    margin-left: 1% ;
+    font-weight: bold;
+    text-align: center;
+}
+footer {
+    width: 100%;
+    background-color: #04315f;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.social-media {
+    display: flex;
+    gap: 50px; /* Espacio entre las redes */
+    margin-bottom: 20px; /* Separación de los derechos */
+}
+
+.social-media div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.copyright {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* Ajusta el carrusel */
+.slick-slider {
+    margin: 20px auto; /* Centra el carrusel */
+    max-width: 90%; /* Ajusta el ancho del carrusel */
+}
+
+.slick-slide {
+    padding: 0 10px;
+}
+.slick-slide > div {
+    display: flex;
+    justify-content: center;
+}
+  /* Estilos de las tarjetas de producto */
+  
+.bg-navy {
+    background-color: #04315f; /* Azul marino */
+}
+#image1 {
+    height: 50px; /* Ajusta el tamaño del logo */
+    margin-right: 10px; /* Espaciado entre el logo y el resto del contenido */
+}
+#image2{
+    width: 100%;
+    height: 70vh;
+}
+#capa1 {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 10vh;
+    display: flex;
+    flex-direction: column; /* Coloca los elementos uno debajo del otro */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    width: 100%;
+    height: 70vh;
+    background-color: rgba(17, 17, 17, 0.486);
+}
+#capa1 h1 {
+    font-size: 3rem; /* Ajusta el tamaño del texto si es necesario */
+    color: #ffffff; /* Cambia el color del texto si es necesario */
+    margin: 3vh 0; /* Elimina márgenes adicionales */
+    margin-left: 10% ;
+    font-weight: bold;
+}
+#capa1 h3 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin: 3vh 0; /* Espaciado entre los textos */
+    margin-left: 2.3%;
+    font-weight: bold;
+}
+#capa1 .input-group {
+    width: 50%; /* o el porcentaje que prefieras */
+    margin: 0 auto; /* para centrarlo */
+  }
+/*#capa1 form{
+    width: 30%;
+    margin: 3vh 0; 
+    margin-left: 3%;
+}*/
+.navbar .container-fluid {
+    display: flex;
+    justify-content: space-between; /* Alinea los elementos a los extremos */
+    align-items: center; /* Centra verticalmente */
+    flex: 1;
+}
+
+.navbar-nav {
+    margin: 0 auto; /* Centra los botones horizontalmente */
+    float: right;
+}
+
+.nav-item .nav-link {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white; /* Asegura que el texto sea blanco */
+}
+
+/* Hamburger menu button */
+.navbar-toggler {
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    padding: 4px 8px;
+}
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.15rem rgba(255, 255, 255, 0.3);
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+.navbar{
+    height: 10vh;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+}
+/*agrego*/
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Espaciado entre las tarjetas */
+    padding: 20px;
+  }
+  
+  .product-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block !important;
+  }
+
+  .product-card {
+    background-color: #ebe9e9;
+    border-radius: 12px;
+    padding: 30px 20px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    min-height: 220px;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .product-card img {
+    width: 100%;
+    max-width: 160px;
+    height: 140px;
+    object-fit: contain;
+  }
+  
+  .product-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #333;
+    margin: 12px 0 0;
+  }
+
+  
+/* Responsive styles */
+@media screen and (max-width: 991px) {
+    .navbar-collapse {
+        background-color: rgba(4, 49, 95, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 10px;
+        padding: 15px;
+        margin-top: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .navbar-nav {
+        display: flex;
+        margin: 0;
+        align-items: stretch;
+    }
+    .navbar-nav .nav-link,
+    .navbar-nav .dropdown-item {
+        color: white !important;
+    }
+    .navbar-nav .dropdown-menu {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: 8px;
+    }
+    .navbar-nav .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+}
+@media screen and (max-width: 768px) {
+    #capa1 .input-group {
+        width: 80%; /* más ancho en móviles para mejor usabilidad */
+      }
+    #capa1 form{
+        width: 60%;
+        margin: 3vh 0; /* Espaciado entre los textos */
+        margin-left: 3%;
+    }
+    #capa1 h1 {
+        font-size: 2rem; /* Ajusta el tamaño del texto si es necesario */
+        color: #ffffff; /* Cambia el color del texto si es necesario */
+        margin: 3vh 0; /* Elimina márgenes adicionales */
+        margin-left: 10% ;
+        font-weight: bold;
+    }
+    #capa1 h3 {
+        font-size: 1rem;
+        color: #ffffff;
+        margin: 3vh 0; /* Espaciado entre los textos */
+        margin-left: 2.3%;
+        font-weight: bold;
+    }
+
+}
+@media screen and (max-width: 480px) {
+    .product-card img {
+        max-width: 70%;
+        max-height: 90px;
+    }
+    .product-card h3 {
+        font-size: 0.85rem;
+    }
+    article h3{
+        margin: 0.2vh 0; /* Elimina márgenes adicionales */
+        margin-left: 1% ;
+        font-weight: bold;
+        text-align: center;
+    }
+   
+    #capa1 form{
+        width: 80%;
+        margin: 3vh 0; /* Espaciado entre los textos */
+        margin-left: 3%;
+    }
+    #capa1 h1 {
+        font-size: 2rem; /* Ajusta el tamaño del texto si es necesario */
+        color: #ffffff; /* Cambia el color del texto si es necesario */
+        margin: 3vh 0; /* Elimina márgenes adicionales */
+        margin-left: 1% ;
+        font-weight: bold;
+    }
+
+}
+    
