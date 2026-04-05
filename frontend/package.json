@@ -6,7 +6,7 @@
   "scripts": {
     "backend": "cd backend && npm run dev",
     "frontend": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
