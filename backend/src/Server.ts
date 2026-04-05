@@ -1,10 +1,24 @@
 import cors from "cors";
 import dotenv from "dotenv";
 import express, { Request, Response } from 'express';
+import { rateLimit } from 'express-rate-limit';
 import { connectDB, getDb } from "./db";
 
 dotenv.config();
 const app = express();
+
+const limiter = rateLimit({
+	windowMs: 15 * 60 * 1000, // Ventana de 15 minutos
+	max: 100, // Límite de 100 peticiones por IP en la ventana
+	message: {
+    error: "Demasiadas peticiones desde esta IP, por favor intenta de nuevo más tarde."
+  },
+	standardHeaders: true, // Devuelve información del límite en los headers `RateLimit-*`
+	legacyHeaders: false, // Desactiva los headers `X-RateLimit-*`
+});
+
+// Aplicar el limitador a todas las rutas
+app.use(limiter);
 app.use(cors());
 app.use(express.json());
 
