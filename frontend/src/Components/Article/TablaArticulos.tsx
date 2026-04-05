@@ -11,10 +11,13 @@ interface TableProps {
 }
 
 const TablaArticulos: React.FC<TableProps> = ({ url, columnas }) => {
+  // Reemplazamos localhost por la URL de producción guardada en .env
+  const finalUrl = url.replace("http://localhost:5001", import.meta.env.VITE_API_URL || "");
+
   useEffect(() => {
     const table = $('#tablaArticulos').DataTable({
       ajax: {
-        url: url,
+        url: finalUrl,
         dataSrc: 'data',
       },
       columns: columnas,
