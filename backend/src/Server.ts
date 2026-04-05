@@ -37,8 +37,27 @@ app.get("/search", async (req: Request, res: Response): Promise<void> => {
 
   try {
     const db = getDb();
+    
+    // Nueva búsqueda ultra inteligente usando Atlas Search
     const results = await db.collection("products")
-      .find({ nombre: { $regex: searchTerm, $options: "i" } })
+      .aggregate([
+        {
+          $search: {
+            index: "default",
+            text: {
+              query: searchTerm,
+              path: "nombre",
+              fuzzy: {
+                maxEdits: 2, // Permite 2 errores ortográficos
+                prefixLength: 1, // Exige que la 1ra letra sea correcta
+                maxExpansions: 50
+              }
+            }
+          }
+        },
+        // Limitamos los resultados a 100 para no saturar si la búsqueda es muy general
+        { $limit: 100 }
+      ])
       .toArray();
 
     const mapped = results.map(r => ({
