@@ -20,7 +20,15 @@ const TablaArticulos: React.FC<TableProps> = ({ url, columnas }) => {
         url: finalUrl,
         dataSrc: 'data',
       },
-      columns: columnas,
+      columns: columnas.map((col) => {
+        if (col.data === 'precio' && !col.render) {
+          return {
+            ...col,
+            render: (data: any) => `Q ${data}`
+          };
+        }
+        return col;
+      }),
       destroy: true, // Para evitar errores al recargar
     });
 
