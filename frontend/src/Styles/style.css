@@ -303,4 +303,34 @@ footer {
     }
 
 }
-    
+
+/* Homologar colores azules al color Navy del header */
+
+/* Botón de búsqueda */
+.btn-primary.bg-navy {
+    background-color: #04315f !important;
+    border-color: #04315f !important;
+    color: white !important;
+}
+
+.btn-primary.bg-navy:hover,
+.btn-primary.bg-navy:focus,
+.btn-primary.bg-navy:active {
+    background-color: #032142 !important; 
+    border-color: #032142 !important;
+}
+
+/* Paginación de Datatables/Bootstrap */
+.page-item.active .page-link {
+    background-color: #04315f !important;
+    border-color: #04315f !important;
+    color: white !important;
+}
+
+.page-link {
+    color: #04315f !important; 
+}
+
+.page-link:hover {
+    color: #032142 !important;
+}
