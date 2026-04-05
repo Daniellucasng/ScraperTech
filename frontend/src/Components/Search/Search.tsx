@@ -23,8 +23,8 @@ export const Search = () => {
       <div id="search">
         <img src={gif} id="image2"/>
         <div id="capa1">
-          <center><strong><h1>Comparador de Precios</h1></strong></center>
-          <h3>Escribe lo que buscas!!</h3>
+          <center><strong><h1>Comparador de precios</h1></strong></center>
+          <h3>Escribe lo que buscas!</h3>
             <div className="input-group">
              
               <input 
