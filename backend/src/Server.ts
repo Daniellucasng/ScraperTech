@@ -8,6 +8,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Endpoint para mantener el servidor "despierto" (Render / Cronjobs)
+app.get("/ping", (req: Request, res: Response): void => {
+  res.status(200).json({ status: "alive", message: "pong" });
+});
+
 // Endpoint global de búsqueda (debe ir antes del endpoint dinámico)
 app.get("/search", async (req: Request, res: Response): Promise<void> => {
   const searchTerm = req.query.term as string;
